@@ -64,7 +64,7 @@ function Profile(props) {
 
                             <div className="text-center p-4 border-bottom">
                                 <div className="mb-4">
-                                    <img src={avatar1} className="rounded-circle avatar-lg img-thumbnail" alt="chatvia" />
+                                    <img src={avatar1} className="rounded-circle avatar-lg img-thumbnail" alt="klubby" />
                                 </div>
 
                                 <h5 className="font-size-16 mb-1 text-truncate">{t('Patricia Smith')}</h5>

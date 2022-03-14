@@ -7,6 +7,26 @@
 .theme--dark {
   min-height: 100vh;
 }
+.chat-conversation .conversation-list .ctext-wrap-content::before {
+  display: none;
+}
+
+// .border-bottom {
+//   background-color: #272727;
+//   border: none !important;
+// }
+
+.modal-content {
+  background-color: #242424;
+}
+.form-control {
+  background-color: #19191B;
+  
+}
+.form-control:focus {
+  color: white;
+}
+//------------------------ Theme-light white ---------------------------
 .theme--light {
 
   color: #495057;
@@ -179,15 +199,16 @@
     border-left: 4px solid #f0eff5;
     background-color: #fff;
   }
+  // .border-bottom {
+  //   background-color: white;
+  //   border: none !important;
+  // }
 
 }
-// .modal-content {
-//   background-color: #fff !important;
-//   border: 1px solid #f0eff5;
-// }
 
 
 
+//------------------------ Theme color ---------------------------
 .chat-conversation .conversation-list .ctext-wrap-content {
   @include colored() {
     background: c('color');
@@ -242,8 +263,6 @@
   @include colored() {
     color: c('color') !important;
   }
+  
 }
 
-.chat-conversation .conversation-list .ctext-wrap-content::before {
-  display: none;
-}

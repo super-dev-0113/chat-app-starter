@@ -120,7 +120,7 @@ function LeftSidebarMenu(props) {
                         </UncontrolledTooltip>
                         <Dropdown nav isOpen={dropdownOpenMobile} toggle={toggleMobile} className="profile-user-dropdown d-inline-block d-lg-none">
                             <DropdownToggle nav>
-                                <img src={avatar1} alt="chatvia" className="profile-user rounded-circle" />
+                                <img src={avatar1} alt="klubby" className="profile-user rounded-circle" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-menu-end">
                                 <DropdownItem onClick={() => { toggleTab('profile'); }}>Profile <i className="ri-profile-line float-end text-muted"></i></DropdownItem>
@@ -162,7 +162,7 @@ function LeftSidebarMenu(props) {
                             </DropdownMenu>
                         </Dropdown>
                         <li className="nav-item">
-                            <NavLink id="light-dark" target="_blank" href="//chatvia-dark.react.themesbrand.com/">
+                            <NavLink id="light-dark" target="_blank" href="//klubby-dark.react.themesbrand.com/">
                                 <i className="ri-sun-line theme-mode-icon"></i>
                             </NavLink>
                             <UncontrolledTooltip target="light-dark" placement="right">
