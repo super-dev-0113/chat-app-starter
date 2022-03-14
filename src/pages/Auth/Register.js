@@ -4,17 +4,12 @@ import { withRouter, Link } from 'react-router-dom';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Container, Row, Col, Card, CardBody, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
+import { Container, Row, Col, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
 
 //Import action
 import { registerUser, apiError } from '../../redux/actions';
 
-//i18n
-import { useTranslation } from 'react-i18next';
 
-//Import Images
-import logodark from "../../assets/images/logo-dark.png";
-import logolight from "../../assets/images/logo-light.png";
 
 /**
  * Register component
@@ -25,9 +20,6 @@ const Register = (props) => {
     const clearError = () => {
         props.apiError("");
     }
-
-    /* intilize t variable for multi language implementation */
-    const { t } = useTranslation();
 
     useEffect(clearError);
 
@@ -53,23 +45,15 @@ const Register = (props) => {
     return (
         <React.Fragment>
 
-            <div className="account-pages my-5 pt-sm-5">
+            <div className="account-pages pt-sm-5">
                 <Container>
                     <Row className="justify-content-center">
                         <Col md={8} lg={6} xl={5}>
                             <div className="text-center mb-4">
-                                <Link to="/" className="auth-logo mb-5 d-block">
-                                    <img src={logodark} alt="" height="30" className="logo logo-dark" />
-                                    <img src={logolight} alt="" height="30" className="logo logo-light" />
-                                </Link>
-
-                                <h4>{t('Sign up')}</h4>
-                                <p className="text-muted mb-4">{t('Get your Chatvia account now')}.</p>
+                                <h1>Sign up</h1>
 
                             </div>
 
-                            <Card>
-                                <CardBody className="p-4">
                                     {
                                         props.error && <Alert variant="danger">{props.error}</Alert>
                                     }
@@ -81,7 +65,7 @@ const Register = (props) => {
                                         <Form onSubmit={formik.handleSubmit}>
 
                                             <div className="mb-3">
-                                                <Label className="form-label">{t('Email')}</Label>
+                                                <Label className="form-label">Email</Label>
                                                 <InputGroup className="input-group bg-soft-light rounded-3 mb-3">
                                                     <span className="input-group-text text-muted">
                                                         <i className="ri-mail-line"></i>
@@ -104,7 +88,7 @@ const Register = (props) => {
                                             </div>
 
                                             <div className="mb-3">
-                                                <Label className="form-label">{t('Username')}</Label>
+                                                <Label className="form-label">Username</Label>
                                                 <InputGroup className="mb-3 bg-soft-light input-group-lg rounded-lg">
                                                     <span className="input-group-text border-light text-muted">
                                                         <i className="ri-user-2-line"></i>
@@ -127,7 +111,7 @@ const Register = (props) => {
                                             </div>
 
                                             <FormGroup className="mb-4">
-                                                <Label className="form-label">{t('Password')}</Label>
+                                                <Label className="form-label">Password</Label>
                                                 <InputGroup className="mb-3 bg-soft-light input-group-lg rounded-lg">
                                                     <span className="input-group-text border-light text-muted">
                                                         <i className="ri-lock-2-line"></i>
@@ -150,23 +134,15 @@ const Register = (props) => {
                                                 </InputGroup>
                                             </FormGroup>
 
-
                                             <div className="d-grid">
-                                                <Button color="primary" block className=" waves-effect waves-light" type="submit">Sign up</Button>
-                                            </div>
-
-                                            <div className="mt-4 text-center">
-                                                <p className="text-muted mb-0">{t('By registering you agree to the Chatvia')} <Link to="#" className="text-primary">{t('Terms of Use')}</Link></p>
+                                                <Button className="auth-main-btn" type="submit">Sign up</Button>
                                             </div>
 
                                         </Form>
                                     </div>
-                                </CardBody>
-                            </Card>
 
-                            <div className="mt-5 text-center">
-                                <p>{t('Already have an account')} ? <Link to="/login" className="font-weight-medium text-primary"> {t('Signin')} </Link> </p>
-                                <p>© {t('2021 Chatvia')}. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by Themesbrand')}</p>
+                            <div className="mt-3 text-center">
+                                <p>Already have an account <Link to="/login" className="font-weight-medium text-primary">&nbsp;Sign&nbsp;in </Link> </p>
                             </div>
                         </Col>
                     </Row>

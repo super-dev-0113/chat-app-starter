@@ -5,11 +5,11 @@
 //
 
 // Vertical Sidebar - Default Light
-$sidebar-bg: #36404a;
-$sidebar-menu-item-color: #a6b0cf;
+$sidebar-bg: #373737;
+$sidebar-menu-item-color: #929292;
 $sidebar-menu-item-active-color: #7269ef;
-$sidebar-menu-item-active-bg: #3e4a56;
-$sidebar-sub-bg:  #303841;
+$sidebar-menu-item-active-bg: #464646;
+$sidebar-sub-bg:  #1E1E1E;
 
 // Display
 $display-none: block;
@@ -23,8 +23,8 @@ $font-weight-semibold: 600;
 $font-family-secondary: 'Public Sans', sans-serif;
 
 // Chat
-$chat-primary-bg:     #7269ef;
-$chat-secondary-bg:     #36404a;
+$chat-primary-bg:     #6355FA;
+$chat-secondary-bg:     #232323;
 
 
 // Theme mode icon
@@ -42,10 +42,10 @@ $theme-mode-icon:       "\f105";
 $white:    #fff;
 $gray-100: #212529;
 $gray-200: #272c3b;
-$gray-300: #36404a;
-$gray-400: #a6b0cf;
+$gray-300: #343434;
+$gray-400: #707070;
 $gray-500: #9aa1b9;
-$gray-600: #abb4d2;
+$gray-600: rgba(255, 255, 255, 0.8);
 $gray-700: #e1e9f1;
 $gray-800: #eff2f7;
 $gray-900: #f8f9fa;
@@ -297,7 +297,7 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #303841;
+$body-bg:                   #19191B;
 $body-color:                $gray-400;
 $body-text-align:           null;
 
@@ -952,7 +952,7 @@ $dropdown-padding-y:                .5rem;
 $dropdown-spacer:                   .125rem;
 $dropdown-font-size:                $font-size-base;
 $dropdown-color:                    $body-color;
-$dropdown-bg:                       #313a43;
+$dropdown-bg:                       #1D1D1D;
 $dropdown-border-color:             tint-color($gray-300, 4%);
 $dropdown-border-radius:            $border-radius;
 $dropdown-border-width:             $border-width;
@@ -1040,7 +1040,7 @@ $card-cap-bg:                       $gray-300;
 $card-cap-color:                    null;
 $card-height:                       null;
 $card-color:                        null;
-$card-bg:                           #262e35;
+$card-bg:                           #1D1D1D;
 
 $card-img-overlay-padding:          $spacer;
 

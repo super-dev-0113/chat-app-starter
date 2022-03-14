@@ -2,7 +2,9 @@ import React from 'react';
 import Routes from './routes/';
 
 //Import Scss
-import "./assets/scss/themes.scss";
+import  "./assets/scss/themes.scss";
+
+import "./assets/scss/_theme/index.scss"
 
 //fackbackend
 import fakeBackend from './helpers/fake-backend';
@@ -10,6 +12,8 @@ import fakeBackend from './helpers/fake-backend';
 // //Firebase helper
 // import { initFirebaseBackend } from "./helpers/firebase";
 
+
+import ThemeProvider from "./Contexts/ThemeProvider";
 // TODO
 fakeBackend();
 
@@ -29,7 +33,9 @@ fakeBackend();
 
 function App() {
   return (
-    <Routes />
+    <ThemeProvider>
+      <Routes />
+    </ThemeProvider>
   );
 }
 

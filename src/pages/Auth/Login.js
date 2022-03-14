@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, CardBody, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
+import { Container, Row, Col, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-//i18n
-import { useTranslation } from 'react-i18next';
-
 //redux store
 import { loginUser, apiError } from '../../redux/actions';
 
 //Import Images
-import logodark from "../../assets/images/logo-dark.png";
-import logolight from "../../assets/images/logo-light.png";
+
 
 /**
  * Login component
@@ -21,8 +17,6 @@ import logolight from "../../assets/images/logo-light.png";
  */
 const Login = (props) => {
 
-    /* intilize t variable for multi language implementation */
-    const { t } = useTranslation();
 
     const clearError = () => {
         props.apiError("");
@@ -52,32 +46,22 @@ const Login = (props) => {
     return (
         <React.Fragment>
 
-            <div className="account-pages my-5 pt-sm-5">
+            <div className="account-pages pt-sm-5">
                 <Container>
                     <Row className="justify-content-center">
                         <Col md={8} lg={6} xl={5} >
                             <div className="text-center mb-4">
-                                <Link to="/" className="auth-logo mb-5 d-block">
-                                    <img src={logodark} alt="" height="30" className="logo logo-dark" />
-                                    <img src={logolight} alt="" height="30" className="logo logo-light" />
-                                </Link>
 
-                                <h4>{t('Sign in')}</h4>
-                                <p className="text-muted mb-4">{t('Sign in to continue to Chatvia')}.</p>
+                                <h1>Sign in</h1>
 
                             </div>
-
-                            <Card>
-                                <CardBody className="p-4">
-                                    {
-                                        props.error && <Alert color="danger">{props.error}</Alert>
-                                    }
+                                {
+                                    props.error && <Alert color="danger">{props.error}</Alert>
+                                }
                                     <div className="p-3">
-
                                         <Form onSubmit={formik.handleSubmit}>
-
                                             <div className="mb-3">
-                                                <Label className="form-label">{t('Username')}</Label>
+                                                <Label className="form-label">Username</Label>
                                                 <InputGroup className="mb-3 bg-soft-light rounded-3">
                                                     <span className="input-group-text text-muted" id="basic-addon3">
                                                         <i className="ri-user-2-line"></i>
@@ -101,9 +85,9 @@ const Login = (props) => {
 
                                             <FormGroup className="mb-4">
                                                 <div className="float-end">
-                                                    <Link to="forget-password" className="text-muted font-size-13">{t('Forgot password')}?</Link>
+                                                    <Link to="forget-password" className="text-muted font-size-13">Forgot password</Link>
                                                 </div>
-                                                <Label className="form-label">{t('Password')}</Label>
+                                                <Label className="form-label">Password</Label>
                                                 <InputGroup className="mb-3 bg-soft-light rounded-3">
                                                     <span className="input-group-text text-muted">
                                                         <i className="ri-lock-2-line"></i>
@@ -128,22 +112,18 @@ const Login = (props) => {
 
                                             <div className="form-check mb-4">
                                                 <Input type="checkbox" className="form-check-input" id="remember-check" />
-                                                <Label className="form-check-label" htmlFor="remember-check">{t('Remember me')}</Label>
+                                                <Label className="form-check-label" htmlFor="remember-check">Remember me</Label>
                                             </div>
 
                                             <div className="d-grid">
-                                                <Button color="primary" block className=" waves-effect waves-light" type="submit">{t('Sign in')}</Button>
+                                                <Button className="auth-main-btn" type="submit">Sign in</Button>
                                             </div>
 
                                         </Form>
                                     </div>
-                                </CardBody>
-                            </Card>
-
-                            <div className="mt-5 text-center">
-                                <p>{t("Don't have an account")} ? <Link to="register" className="font-weight-medium text-primary"> {t('Signup now')} </Link> </p>
-                                <p>© {t('2021 Chatvia')}. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by Themesbrand')}</p>
-                            </div>
+                                    <div className="mt-3 text-center">
+                                     <p>No account yet? &nbsp;<Link to="/register" className="font-weight-medium text-primary">&nbsp;Sign up&nbsp;</Link>here </p>
+                                </div>
                         </Col>
                     </Row>
                 </Container>

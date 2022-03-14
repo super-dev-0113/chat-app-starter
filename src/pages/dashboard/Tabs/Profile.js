@@ -10,6 +10,7 @@ import avatar1 from "../../../assets/images/users/avatar-1.jpg";
 
 //i18n
 import { useTranslation } from 'react-i18next';
+import ThemeSetter from "../../../ThemeSetter"
 
 function Profile(props) {
 
@@ -40,7 +41,10 @@ function Profile(props) {
 
     return (
         <React.Fragment>
+            
             <div>
+            <ThemeSetter />
+                
                             <div className="px-4 pt-4">
                                 <div className="user-chat-nav float-end">
                                     <Dropdown isOpen={dropdownOpen} toggle={toggle}>

@@ -16,7 +16,7 @@ function ChatLeftSidebar(props) {
 
     return (
         <React.Fragment>
-            <div className="chat-leftsidebar me-lg-1">
+            <div className="chat-leftsidebar me-lg-2">
 
                 <TabContent activeTab={activeTab}>
                     {/* Start Profile tab-pane */}

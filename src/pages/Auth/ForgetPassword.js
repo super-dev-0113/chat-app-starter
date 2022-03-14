@@ -5,17 +5,12 @@ import { Link, Redirect } from 'react-router-dom';
 //Import formik validation
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Container, Row, Col, Card, CardBody, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
+import { Container, Row, Col, FormGroup, Alert, Form, Input, Button, FormFeedback, Label, InputGroup } from 'reactstrap';
 
 //Import actions and helpers
 import { forgetPassword, apiError } from '../../redux/actions';
 
-//i18n
-import { useTranslation } from 'react-i18next';
 
-//Import Images
-import logodark from "../../assets/images/logo-dark.png";
-import logolight from "../../assets/images/logo-light.png";
 
 /**
  * Forget Password component
@@ -26,9 +21,6 @@ const ForgetPassword = (props) => {
     const clearError = () => {
         props.apiError("");
     }
-
-    /* intilize t variable for multi language implementation */
-    const { t } = useTranslation();
 
     useEffect(clearError);
 
@@ -52,35 +44,25 @@ const ForgetPassword = (props) => {
 
     return (
         <React.Fragment>
-            <div className="account-pages my-5 pt-sm-5">
+            <div className="account-pages pt-sm-5">
                 <Container>
                     <Row className="justify-content-center">
                         <Col md={8} lg={6} xl={5}>
                             <div className="text-center mb-4">
-                                <Link to="/" className="auth-logo mb-5 d-block">
-                                    <img src={logodark} alt="" height="30" className="logo logo-dark" />
-                                    <img src={logolight} alt="" height="30" className="logo logo-light" />
-                                </Link>
-
-                                <h4>{t('Reset Password')}</h4>
-                                <p className="text-muted mb-4">{t('Reset Password With Chatvia.')}</p>
-
+                                <h1>Reset Password</h1>
                             </div>
-
-                            <Card>
-                                <CardBody className="p-4">
                                     <div className="p-3">
                                         {
                                             props.error && <Alert variant="danger">{props.error}</Alert>
                                         }
                                         {
-                                            props.passwordResetStatus ? <Alert variant="success" className="text-center mb-4">{props.passwordResetStatus}</Alert>
-                                                : <Alert variant="success" className="text-center mb-4">{t('Enter your Email and instructions will be sent to you')}!</Alert>
+                                            props.passwordResetStatus ? <Alert className="text-center mb-4">{props.passwordResetStatus}</Alert>
+                                                : <Alert className="text-center mb-4">Enter your Email and instructions will be sent to you</Alert>
                                         }
                                         <Form onSubmit={formik.handleSubmit}>
 
                                             <FormGroup className="mb-4">
-                                                <Label className="form-label">{t('Email')}</Label>
+                                                <Label className="form-label">Email</Label>
                                                 <InputGroup className="mb-3 bg-soft-light rounded-3">
                                                     <span className="input-group-text border-light text-muted">
                                                         <i className="ri-mail-line"></i>
@@ -103,17 +85,15 @@ const ForgetPassword = (props) => {
                                             </FormGroup>
 
                                             <div className="d-grid">
-                                                <Button color="primary" block className="waves-effect waves-light" type="submit">{t('Reset')}</Button>
+                                                <Button block className="auth-main-btn" type="submit">Reset</Button>
                                             </div>
 
                                         </Form>
                                     </div>
-                                </CardBody>
-                            </Card>
 
-                            <div className="mt-5 text-center">
-                                <p>{t('Remember It')} ? <Link to="login" className="font-weight-medium text-primary"> {t('Signin')} </Link> </p>
-                                <p>© {t('2021 Chatvia')}. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by Themesbrand')}</p>
+                            <div className="mt-3 text-center">
+                                <p>Remember It ? <Link to="login" className="font-weight-medium text-primary">Sign in</Link> </p>
+                                
                             </div>
                         </Col>
                     </Row>

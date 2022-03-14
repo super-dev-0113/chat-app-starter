@@ -6,6 +6,7 @@ const Dashboard = React.lazy(() => import("../pages/dashboard/index"));
 const StarterPage = React.lazy(() => import("../pages/StarterPage/index"));
 
 // auth
+const Index = React.lazy(() => import("../pages/Auth/Index"));
 const Login = React.lazy(() => import("../pages/Auth/Login"));
 const Logout = React.lazy(() => import("../pages/Auth/Logout"));
 const ForgetPassword = React.lazy(() => import("../pages/Auth/ForgetPassword"));
@@ -25,6 +26,7 @@ const authProtectedRoutes = [
 ];
 
 const publicRoutes = [
+  { path: "/index", component: Index },
   { path: "/logout", component: Logout },
   { path: "/login", component: Login },
   { path: "/forget-password", component: ForgetPassword },

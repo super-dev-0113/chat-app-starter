@@ -4,18 +4,10 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-//i18n
-import { useTranslation } from 'react-i18next';
-
-//Import Images
-import logodark from "../../assets/images/logo-dark.png";
-import logolight from "../../assets/images/logo-light.png";
 import avatar1 from "../../assets/images/users/avatar-1.jpg";
 
 function LockScreen(props) {
 
-    /* intilize t variable for multi language implementation */
-    const { t } = useTranslation();
 
     // validation
     const formik = useFormik({
@@ -32,18 +24,14 @@ function LockScreen(props) {
 
     return (
         <React.Fragment>
-            <div className="account-pages my-5 pt-sm-5">
+            <div className="account-pages pt-sm-5">
             <Container>
                 <Row className="justify-content-center">
                     <Col md={8} lg={6} xl={5}>
                         <div className="text-center mb-4">
-                            <Link to="/" className="auth-logo mb-5 d-block">
-                                <img src={logodark} alt="" height="30" className="logo logo-dark"/>
-                                <img src={logolight} alt="" height="30" className="logo logo-light" />
-                            </Link>
 
-                            <h4>{t('Lock screen')}</h4>
-                            <p className="text-muted mb-4">{t('Enter your password to unlock the screen!')}</p>
+                            <h4>Lock screen</h4>
+                            <p className="text-muted mb-4">Enter your password to unlock the screen!</p>
                             
                         </div>
 
@@ -52,12 +40,12 @@ function LockScreen(props) {
                                 <div className="p-3">
                                     <div className="user-thumb text-center mb-4">
                                         <img src={avatar1} className="rounded-circle img-thumbnail avatar-lg" alt="thumbnail" />
-                                        <h5 className="font-size-15 mt-3">{t('Patricia Smith')}</h5>
+                                        <h5 className="font-size-15 mt-3">Patricia Smith</h5>
                                     </div>
                                     <Form onSubmit={formik.handleSubmit}>
 
                                         <FormGroup className="mb-4">
-                                            <Label className="form-label">{t('Password')}</Label>
+                                            <Label className="form-label">Password</Label>
                                             <InputGroup className="mb-3 bg-soft-light input-group-lg rounded-lg">
                                                     <span className="input-group-text border-light text-muted">
                                                         <i className="ri-lock-2-line"></i>
@@ -88,11 +76,6 @@ function LockScreen(props) {
                                 </div>
                             </CardBody>
                         </Card>
-
-                        <div className="mt-5 text-center">
-                            <p>{t('Not you')} ? {t('return')} <Link to="login" className="font-weight-medium text-primary"> {t('Signin')} </Link> </p>
-                            <p>© {t('2021 Chatvia')}. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by Themesbrand')}</p>
-                        </div>
                     </Col>
                 </Row>
             </Container>
