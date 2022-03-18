@@ -1,13 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody, FormGroup, Form, Input, Button, FormFeedback, InputGroup, Label } from 'reactstrap';
-import { Link } from 'react-router-dom';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import avatar1 from "../../assets/images/users/avatar-1.jpg";
 
 function LockScreen(props) {
-
 
     // validation
     const formik = useFormik({

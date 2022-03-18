@@ -3,6 +3,12 @@ $text--dark: white;
 $bg--light: white;
 $bg--dark: black;
 
+$color-0: #7269ef;
+$color-1: #2ecc71;
+$color-2: #3498db;
+$color-3: #f1c40f;
+$color-4: #e74c3c;
+
 $themes: (
         light: (
                 bg: $bg--light,
@@ -15,14 +21,20 @@ $themes: (
 );
 
 $colors: (
-  red: (
-    color: red,
+  color_0: (
+    color: $color-0
   ),
-  blue: (
-    color: blue,
+  color_1: (
+    color: $color-1
   ),
-  origin: (
-    color: #7269ef
+  color_2: (
+    color: $color-2
+  ),
+  color_3: (
+    color: $color-3
+  ),
+  color_4: (
+    color: $color-4
   )
 );
 

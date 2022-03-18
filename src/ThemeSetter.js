@@ -1,31 +1,77 @@
 import React, { useContext } from "react";
-
+import { Label, Input } from "reactstrap";
 import ThemeContext from "./Contexts/ThemeContext";
+import  "./assets/scss/custom/components/_themesetter.scss";
 
 export default function ThemeSetter() {
-  const { theme, setTheme } = useContext(ThemeContext);
-  const { color, setColor } = useContext(ThemeContext);
+  const { setTheme } = useContext(ThemeContext);
+  const { setColor } = useContext(ThemeContext);
 
   return (
     <div>
-      <select value={theme} onChange={(e) => setTheme(e.currentTarget.value)}>
-        {themeOptions.map((option, idx) => (
-          <option value={option.value} key={idx}>
-            {option.value}
-          </option>
-        ))}
-      </select>
-      <select value={color} onChange={(e) => setColor(e.currentTarget.value)}>
-        {colorOptions.map((option, idx) => (
-          <option value={option.value} key={idx}>
-            {option.value}
-          </option>
-        ))}
-      </select>
+      <div className="mt-2 mb-2">
+        <p>Theme</p>
+      </div>
+      <div>
+          <Label check>
+            <Input type="radio" name="radio1" value="dark" onChange={() => setTheme("dark")} />  Dark mode
+          </Label>
+          <>&nbsp;&nbsp;&nbsp;&nbsp;</>
+          <Label check>
+            <Input type="radio" name="radio1" value="light" onChange={() => setTheme("light")} /> Light mode
+          </Label>
+      </div>
+      <div className="mt-4 mb-2">
+        <p>Color</p>
+      </div>
+      <div className="custom-radios">
+          <div>
+          <Input type="radio" id="color-0" name="color" value="color-1" onChange={() => setColor("color_0")} />
+          <label htmlFor="color-0">
+            <span>
+              <i className="ri-check-line"></i>
+            </span>
+          </label>
+          </div>
+
+          <div>
+            <Input type="radio" id="color-1" name="color" value="color-1" onChange={() => setColor("color_1")} />
+            <label htmlFor="color-1">
+              <span>
+                <i className="ri-check-line"></i>
+              </span>
+            </label>
+          </div>
+          
+          <div>
+            <Input type="radio" id="color-2" name="color" value="color-2" onChange={() => setColor("color_2")}/>
+            <label htmlFor="color-2">
+              <span>
+                <i className="ri-check-line"></i>
+              </span>
+            </label>
+          </div>
+          
+          <div>
+            <Input type="radio" id="color-3" name="color" value="color-3" onChange={() => setColor("color_3")}/>
+            <label htmlFor="color-3">
+              <span>
+                <i className="ri-check-line"></i>
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <Input type="radio" id="color-4" name="color" value="color-4" onChange={() => setColor("color_4")}/>
+            <label htmlFor="color-4">
+              <span>
+                <i className="ri-check-line"></i>
+              </span>
+            </label>
+          </div>
+      </div>
     </div>
 
   );
 }
 
-const themeOptions = [{ value: "light" }, { value: "dark" }];
-const colorOptions = [{ value: "red" }, { value: "blue" }, { value: "origin" }];

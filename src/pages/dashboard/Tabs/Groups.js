@@ -27,6 +27,7 @@ class Groups extends Component {
             groupName: "",
             groupDesc: ""
         }
+
         this.toggle = this.toggle.bind(this);
         this.toggleCollapse = this.toggleCollapse.bind(this);
         this.createGroup = this.createGroup.bind(this);
@@ -35,6 +36,7 @@ class Groups extends Component {
         this.handleChangeGroupDesc = this.handleChangeGroupDesc.bind(this);
     }
 
+    
     toggle() {
         this.setState({ modal: !this.state.modal });
     }

@@ -3,7 +3,7 @@ import { Dropdown, DropdownMenu, DropdownItem, DropdownToggle, Card, Button, Unc
 import { Link } from "react-router-dom";
 
 import SimpleBar from "simplebar-react";
-
+import ThemeSetter from '../../../ThemeSetter';
 //Import components
 import CustomCollapse from "../../../components/CustomCollapse";
 
@@ -19,6 +19,7 @@ function Settings(props) {
     const [isOpen2, setIsOpen2] = useState(false);
     const [isOpen3, setIsOpen3] = useState(false);
     const [isOpen4, setIsOpen4] = useState(false);
+    const [isOpen5, setIsOpen5] = useState(false);
 
     /* intilize t variable for multi language implementation */
     const { t } = useTranslation();
@@ -28,6 +29,8 @@ function Settings(props) {
         setIsOpen2(false);
         setIsOpen3(false);
         setIsOpen4(false);
+        setIsOpen5(false);
+
     };
 
     const toggleCollapse2 = () => {
@@ -35,6 +38,8 @@ function Settings(props) {
         setIsOpen1(false);
         setIsOpen3(false);
         setIsOpen4(false);
+        setIsOpen5(false);
+
     };
 
     const toggleCollapse3 = () => {
@@ -42,6 +47,8 @@ function Settings(props) {
         setIsOpen1(false);
         setIsOpen2(false);
         setIsOpen4(false);
+        setIsOpen5(false);
+
     };
 
     const toggleCollapse4 = () => {
@@ -49,6 +56,14 @@ function Settings(props) {
         setIsOpen1(false);
         setIsOpen3(false);
         setIsOpen2(false);
+        setIsOpen5(false);
+    };
+    const toggleCollapse5 = () => {
+        setIsOpen5(!isOpen5);
+        setIsOpen1(false);
+        setIsOpen3(false);
+        setIsOpen2(false);
+        setIsOpen4(false);
     };
 
     const toggle = () => setDropdownOpen(!dropdownOpen);
@@ -240,7 +255,16 @@ function Settings(props) {
                             </CustomCollapse>
                         </Card>
                         {/* end Security card */}
-
+        
+                        <Card className="shadow-none border mb-2">
+                            <CustomCollapse
+                                title="Theme setting"
+                                isOpen={isOpen5}
+                                toggleCollapse={toggleCollapse5}
+                            >
+                            <ThemeSetter/>
+                            </CustomCollapse>
+                        </Card>
                         <Card className="shadow-none border mb-2">
                             <CustomCollapse
                                 title="Help"
@@ -261,6 +285,7 @@ function Settings(props) {
                                 </div>
                             </CustomCollapse>
                         </Card>
+
                         {/* end Help card */}
                     </div>
                     {/* end profile-setting-accordion */}

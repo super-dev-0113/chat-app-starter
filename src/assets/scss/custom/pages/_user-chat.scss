@@ -4,10 +4,11 @@
 
 // user chat
 
-.user-chat {
+.user-chat, .post-chat {
     background-color: $card-bg;
     box-shadow: 0 2px 4px rgba(15,34,58,.12);
     transition: all 0.4s;
+
     @media (max-width: 991.98px) {
         position: fixed;
         left: 0;
@@ -25,6 +26,7 @@
     }
 
 }
+
 
 .user-chat-nav {
     .nav-btn {

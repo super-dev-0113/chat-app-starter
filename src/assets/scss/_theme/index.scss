@@ -16,6 +16,31 @@
 //   border: none !important;
 // }
 
+// notification
+.notification-cover {
+  position: relative;
+  z-index: 1;
+  .notification-badge {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    background-color: #7269ef;
+    top: 16%;
+    right: 20%;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+// notification
+label {
+  cursor: pointer;
+}
 .modal-content {
   background-color: #242424;
 }
@@ -26,6 +51,12 @@
 .form-control:focus {
   color: white;
 }
+@media (max-width: 991.98px) {
+  .chat-main-board .tab-content > .tab-pane {
+    display: block;
+  }
+}
+
 //------------------------ Theme-light white ---------------------------
 .theme--light {
 
@@ -93,7 +124,7 @@
   .bg-light {
     background-color: #e6ebf5!important;
   }
-  .user-chat {
+  .main-chat-board {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
   }
@@ -263,6 +294,23 @@
   @include colored() {
     color: c('color') !important;
   }
-  
 }
 
+#Ellipse_32 {
+  @include colored() {
+    fill: c('color') !important;
+  }
+  
+}
+.notification-cover .notification-badge {
+  @include colored() {
+    background-color: c('color') !important;
+  }
+}
+
+.badge-soft-danger {
+  color: white;
+  @include colored() {
+    background-color: c('color') !important;
+  }
+}

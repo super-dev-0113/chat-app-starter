@@ -42,10 +42,10 @@ function ChatInput(props) {
 
     //function for send data to onaddMessage function(in userChat/index.js component)
     const onaddMessage = (e, textMessage) => {
-
         e.preventDefault();
         //if text value is not emptry then call onaddMessage function
         if (textMessage !== "") {
+            
             props.onaddMessage(textMessage, "textMessage");
             settextMessage("");
         }

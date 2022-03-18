@@ -10,7 +10,7 @@ import SimpleBar from "simplebar-react";
 import { setconversationNameInOpenChat, activeUser } from "../../../redux/actions"
 
 //components
-import OnlineUsers from "./OnlineUsers";
+// import OnlineUsers from "./OnlineUsers";
 
 class Chats extends Component {
     constructor(props) {
@@ -39,6 +39,7 @@ class Chats extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+
         if (this.props.recentChatList !== nextProps.recentChatList) {
             this.setState({
                 recentChatList: nextProps.recentChatList,
@@ -66,7 +67,6 @@ class Chats extends Component {
     }
 
     openUserChat(e, chat) {
-
         e.preventDefault();
 
         //find index of current chat in array
@@ -130,12 +130,9 @@ class Chats extends Component {
                         {/* Search Box */}
                     </div>
 
-                    {/* online users */}
-                    <OnlineUsers />
-
                     {/* Start chat-message-list  */}
                     <div className="px-2">
-                        <h5 className="mb-3 px-3 font-size-16">Recent</h5>
+                        {/* <h5 className="mb-3 px-3 font-size-16">Recent</h5> */}
                         <SimpleBar style={{ maxHeight: "100%" }} className="chat-message-list">
 
                             <ul className="list-unstyled chat-list chat-user-list" id="chat-list">

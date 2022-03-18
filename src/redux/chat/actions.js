@@ -1,5 +1,5 @@
 import {
-    CHAT_USER,ACTIVE_USER,FULL_USER, ADD_LOGGED_USER, CREATE_GROUP
+    CHAT_USER,ACTIVE_USER,FULL_USER, ADD_LOGGED_USER, CREATE_GROUP, ACTIVE_POST, FULL_POST
 } from './constants';
 
 
@@ -12,9 +12,19 @@ export const activeUser = (userId) => ({
     payload : userId
 });
 
+export const activePost = (userId) => ({
+    type: ACTIVE_POST,
+    payload : userId
+});
+
 export const setFullUser = (fullUser) => ({
     type: FULL_USER,
     payload : fullUser
+});
+
+export const setFullPost = (fullPost) => ({
+    type: FULL_POST,
+    payload : fullPost
 });
 
 export const addLoggedinUser = (userData) => ({

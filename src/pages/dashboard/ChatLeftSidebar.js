@@ -4,14 +4,15 @@ import { connect } from "react-redux";
 import { TabContent, TabPane } from "reactstrap";
 
 //Import Components
+import Home from "./Tabs/Home";
 import Profile from "./Tabs/Profile";
 import Chats from "./Tabs/Chats";
 import Groups from "./Tabs/Groups";
-import Contacts from "./Tabs/Contacts";
+// import Notification from "./Tabs/Groups";
+// import Contacts from "./Tabs/Contacts";
 import Settings from "./Tabs/Settings";
 
 function ChatLeftSidebar(props) {
-
     const activeTab = props.activeTab;
 
     return (
@@ -19,6 +20,12 @@ function ChatLeftSidebar(props) {
             <div className="chat-leftsidebar me-lg-2">
 
                 <TabContent activeTab={activeTab}>
+                     {/* Start Home tab-pane */}
+                     <TabPane tabId="home" id="pills-home">
+                         <Home recentPostList={props.recentPostList} />
+                    </TabPane>
+                    {/* End Profile tab-pane  */}
+
                     {/* Start Profile tab-pane */}
                     <TabPane tabId="profile" id="pills-user">
                         {/* profile content  */}
@@ -34,25 +41,18 @@ function ChatLeftSidebar(props) {
                     {/* End chats tab-pane */}
 
                     {/* Start groups tab-pane */}
-                    <TabPane tabId="group" id="pills-groups">
+                    <TabPane tabId="klubs" id="pills-groups">
                         {/* Groups content */}
                         <Groups />
                     </TabPane>
                     {/* End groups tab-pane */}
-
-                    {/* Start contacts tab-pane */}
-                    <TabPane tabId="contacts" id="pills-contacts">
-                        {/* Contact content */}
-                        <Contacts />
-                    </TabPane>
-                    {/* End contacts tab-pane */}
-
                     {/* Start settings tab-pane */}
                     <TabPane tabId="settings" id="pills-setting">
                         {/* Settings content */}
                         <Settings />
                     </TabPane>
                     {/* End settings tab-pane */}
+
                 </TabContent>
                 {/* end tab content */}
 

@@ -1,8 +1,8 @@
 import React from "react";
 
 export const initialThemeState = {
-  theme: "light",
-  color: "red",
+  theme: "dark",
+  color: "color_0",
   setTheme: () => null,
   setColor: () => null
 };
